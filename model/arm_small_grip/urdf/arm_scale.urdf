@@ -1,0 +1,453 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="arm_scale">
+
+    <link name="world"/>
+
+    <link name="base">
+      <inertial>
+        <origin xyz="0 0 -0.17444" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.45813" ixy="0" ixz="0" iyy="0.45813" iyz="0" izz="0.78125"/>
+      </inertial>
+      <visual name="base_visual">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm_small_grip/meshes/dae/base_mesh.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="base_material"/>
+      </visual>
+      <collision name="base">
+        <origin xyz="0 0 -0.17444" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="1.25" length="0.9"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="gripper_base_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="gripper_base">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm_small_grip/meshes/dae/gripper_base_mesh.dae" scale="1.29569 1.29569 1.29569"/>
+        </geometry>
+        <material name="griper_material"/>
+      </visual>
+    </link>
+
+    <link name="gripper_left_arm_link">
+      <inertial>
+        <origin xyz="-0.29771 -0.01612 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.03003" ixy="4e-05" ixz="-0.00012" iyy="0.03038" iyz="-0.00022" izz="0.00404"/>
+      </inertial>
+      <visual name="gripper_left_arm">
+        <origin xyz="-0.38574 -0.02089 0" rpy="0 -1.5708 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm_small_grip/meshes/dae/gripper_left_arm_mesh.dae" scale="1.29569 1.29569 1.29569"/>
+        </geometry>
+        <material name="griper_material"/>
+      </visual>
+      <collision name="gripper_left_arm_collision">
+        <origin xyz="-0.38747 -0.02368 0" rpy="0 -1.5708 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm_small_grip/meshes/dae/gripper_left_arm_collision_mesh.dae" scale="1.2879 1.34663 1.27791"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="gripper_right_arm_link">
+      <inertial>
+        <origin xyz="0.29771 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.03003" ixy="4e-05" ixz="0.00012" iyy="0.03038" iyz="0.00022" izz="0.00404"/>
+      </inertial>
+      <visual name="gripper_right_arm">
+        <origin xyz="0.38574 0 0" rpy="0 1.5708 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm_small_grip/meshes/dae/gripper_right_arm_mesh.dae" scale="1.29569 1.29569 1.29569"/>
+        </geometry>
+        <material name="griper_material"/>
+      </visual>
+      <collision name="gripper_right_arm_collision">
+        <origin xyz="0.38559 0 0" rpy="0 1.5708 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm_small_grip/meshes/dae/gripper_right_arm_collision_mesh.dae" scale="1.27828 1.29034 1.27644"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_1">
+      <inertial>
+        <origin xyz="-0.00201 -0.062 -0.43101" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.29101" ixy="0" ixz="0" iyy="0.29101" iyz="0" izz="0.5"/>
+      </inertial>
+      <visual name="link_1_visual">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm_small_grip/meshes/dae/link_1_mesh.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="link_1_material"/>
+      </visual>
+      <collision name="link_1">
+        <origin xyz="-0.00201 -0.062 -0.43101" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="1.0" length="0.70155"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_2">
+      <inertial>
+        <origin xyz="0 1.45059 -0.05625" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.81177" ixy="0" ixz="0" iyy="0.81177" iyz="0" izz="0.12474"/>
+      </inertial>
+      <visual name="link_2_visual">
+        <origin xyz="0 1.25 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm_small_grip/meshes/dae/link_2_mesh.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="link_2_material"/>
+      </visual>
+      <collision name="link_2">
+        <origin xyz="0 1.45059 -0.05625" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="0.49947" length="2.9988"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_3">
+      <inertial>
+        <origin xyz="0 0.41667 -0.05636" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.30115" ixy="0" ixz="0" iyy="0.30115" iyz="0" izz="0.12474"/>
+      </inertial>
+      <visual name="link_3_visual">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm_small_grip/meshes/dae/link_3_mesh.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="link_3_material"/>
+      </visual>
+      <collision name="link_3">
+        <origin xyz="0 0.41667 -0.05636" rpy="1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="0.49947" length="1.69276"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_4">
+      <inertial>
+        <origin xyz="0 0 -0.44558" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.09797" ixy="0" ixz="0" iyy="0.09797" iyz="0" izz="0.08"/>
+      </inertial>
+      <visual name="link_4_visual">
+        <origin xyz="0 0 -0.04043" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm_small_grip/meshes/dae/link_4_mesh.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="link_4_material"/>
+      </visual>
+      <collision name="link_4">
+        <origin xyz="0 0 -0.44558" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.4" length="0.83404"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_5">
+      <inertial>
+        <origin xyz="0 0.71867 8e-05" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.06825" ixy="0" ixz="0" iyy="0.06825" iyz="0" izz="0.08"/>
+      </inertial>
+      <visual name="link_5_visual">
+        <origin xyz="0 0.36415 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm_small_grip/meshes/dae/link_5_mesh.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="link_5_material"/>
+      </visual>
+      <collision name="link_5">
+        <origin xyz="0 0.71867 8e-05" rpy="-1.5708 0 0"/>
+        <geometry>
+          <cylinder radius="0.4" length="0.58223"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_6">
+      <inertial>
+        <origin xyz="0 0 0.00901" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.04036" ixy="0" ixz="0" iyy="0.04036" iyz="0" izz="0.08"/>
+      </inertial>
+      <visual name="link_6_visual">
+        <origin xyz="0 0 0.07493" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm_small_grip/meshes/dae/link_6_mesh.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="link_6_material"/>
+      </visual>
+      <collision name="link_6">
+        <origin xyz="0 0 0.00901" rpy="0 3.14159 0"/>
+        <geometry>
+          <cylinder radius="0.4" length="0.06561"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="world__base" type="fixed">
+      <parent link="world"/>
+      <child link="base"/>
+    </joint>
+
+    <joint name="gripper_base" type="fixed">
+      <origin xyz="-3e-05 0.00798 0.13099" rpy="0 0 0"/>
+      <parent link="link_6"/>
+      <child link="gripper_base_link"/>
+    </joint>
+
+    <joint name="gripper_left_arm" type="revolute">
+      <origin xyz="-0.00011 -0.16433 -0.01207" rpy="0 1.5708 0"/>
+      <parent link="gripper_base_link"/>
+      <child link="gripper_left_arm_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="0" upper="1.07" effort="50.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="gripper_right_arm" type="revolute">
+      <origin xyz="0.00011 0.18521 -0.01207" rpy="-3.14159 -1.5708 0"/>
+      <parent link="gripper_base_link"/>
+      <child link="gripper_right_arm_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.07" upper="0" effort="50.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="link_1_joint" type="continuous">
+      <origin xyz="0.00201 0.062 1.06632" rpy="0 0 0"/>
+      <parent link="base"/>
+      <child link="link_1"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="20000.0" velocity="2.0"/>
+    </joint>
+
+    <joint name="link_2_joint" type="revolute">
+      <origin xyz="-0.00201 -0.62635 0.52697" rpy="1.5708 0 0"/>
+      <parent link="link_1"/>
+      <child link="link_2"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="20000.0" velocity="0.5"/>
+    </joint>
+
+    <joint name="link_3_joint" type="revolute">
+      <origin xyz="0 2.47971 -1.11681" rpy="0 -3.14159 0"/>
+      <parent link="link_2"/>
+      <child link="link_3"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-2.57" upper="2.57" effort="10000.0" velocity="5.0"/>
+    </joint>
+
+    <joint name="link_4_joint" type="continuous">
+      <origin xyz="0 2.13791 0.0022" rpy="1.5708 0 -3.14159"/>
+      <parent link="link_3"/>
+      <child link="link_4"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="10000.0" velocity="3.0"/>
+    </joint>
+
+    <joint name="link_5_joint" type="revolute">
+      <origin xyz="0 8e-05 0.37283" rpy="1.5708 0 0"/>
+      <parent link="link_4"/>
+      <child link="link_5"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="15000.0" velocity="3.0"/>
+    </joint>
+
+    <joint name="link_6_joint" type="continuous">
+      <origin xyz="0 1.03991 0" rpy="-1.5708 0 0"/>
+      <parent link="link_5"/>
+      <child link="link_6"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="1000.0" velocity="1.0"/>
+    </joint>
+
+    <transmission name="tran_1">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="link_1_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+      <actuator name="motor_1">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran_2">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="link_2_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+      <actuator name="motor_2">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran_3">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="link_3_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+      <actuator name="motor_3">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>    
+
+    <transmission name="tran_4">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="link_4_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+      <actuator name="motor_4">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran_5">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="link_5_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+      <actuator name="motor_5">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>   
+
+    <transmission name="tran_6">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="link_6_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+      <actuator name="motor_6">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>  
+
+    <transmission name="tran_gripper_arm_left">
+      <type>transmission_interface/SimpleTransmission</type>
+	    <joint name="gripper_left_arm">
+	      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	    </joint>
+      <actuator name="motor_gripper_left_arm">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>   
+
+    <transmission name="tran_gripper_arm_right">
+      <type>transmission_interface/SimpleTransmission</type>
+	    <joint name="gripper_right_arm">
+	      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	    </joint>
+      <actuator name="motor_gripper_right_arm">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>  
+
+    <gazebo>
+      <self_collide>1</self_collide>
+    
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/arm_joint_controll</robotNamespace>
+      </plugin>
+      
+      <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+        <jointName>
+       	  link_1_joint,
+       	  link_2_joint,
+          link_3_joint,
+          link_4_joint,
+          link_5_joint,
+          link_6_joint,
+          gripper_left_arm,
+          gripper_right_arm
+        </jointName>
+      </plugin>
+
+      <plugin name="mimic_joint_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+        <joint>gripper_left_arm</joint>
+        <mimicJoint>gripper_right_arm</mimicJoint>
+        <multiplier>1</multiplier>
+        <offset>0</offset>
+        <sensitiveness>0</sensitiveness>
+        <maxEffort>5</maxEffort>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+
+      <plugin name="gazebo_grasp_fix" filename="libgazebo_grasp_fix.so">
+        <arm>
+          <arm_name>gripper</arm_name>
+          <palm_link>link_6</palm_link>
+          <gripper_link> gripper_left_arm_link </gripper_link>
+          <gripper_link> gripper_right_arm_link </gripper_link>
+        </arm>
+        <forces_angle_tolerance>100</forces_angle_tolerance>
+        <update_rate>10</update_rate>
+        <grip_count_threshold>3</grip_count_threshold>
+        <max_grip_count>10</max_grip_count>
+        <release_tolerance>0.001</release_tolerance>
+        <disable_collisions_on_attach>false</disable_collisions_on_attach>
+        <contact_topic>__default_topic__</contact_topic>
+      </plugin>
+    </gazebo>
+
+    <material name="base_material">
+      <color rgba="0.00293 0.17898 0.64 1.0"/>
+    </material>
+
+    <material name="griper_material">
+      <color rgba="0 0.62196 0.64 1.0"/>
+    </material>
+
+    <material name="link_1_material">
+      <color rgba="0.27804 0.56837 0.64 1.0"/>
+    </material>
+
+    <material name="link_2_material">
+      <color rgba="0.03587 0.64 0.15975 1.0"/>
+    </material>
+
+    <material name="link_3_material">
+      <color rgba="0.64 0.12974 0.1869 1.0"/>
+    </material>
+
+    <material name="link_4_material">
+      <color rgba="0.63358 0.64 0.05655 1.0"/>
+    </material>
+
+    <material name="link_5_material">
+      <color rgba="0.64 0.13903 0.59154 1.0"/>
+    </material>
+
+    <material name="link_6_material">
+      <color rgba="0.27033 0.06955 0.64 1.0"/>
+    </material>
+
+  </robot>

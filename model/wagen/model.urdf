@@ -1,0 +1,269 @@
+<?xml version="1.0" ?>
+<robot name="wagen">
+  <joint name="wagen__base__camera_suport" type="fixed">
+    <parent link="wagen__base"/>
+    <child link="wagen__camera_suport"/>
+    <origin xyz="0.18688 0.00836 0.28565" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+  </joint>
+  <joint name="wagen__base__right_suport" type="fixed">
+    <parent link="wagen__base"/>
+    <child link="wagen__right_suport"/>
+    <origin xyz="0.33338 -0.2872  -0.18887" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+  </joint>
+  <joint name="wagen__base__left_suport" type="fixed">
+    <parent link="wagen__base"/>
+    <child link="wagen__left_suport"/>
+    <origin xyz="0.33338  0.28288 -0.18887" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+  </joint>
+  <joint name="wagen__base__right_wheel" type="revolute">
+    <parent link="wagen__base"/>
+    <child link="wagen__rear_right"/>
+    <origin xyz="-0.7191  -0.43122  0.09398" rpy="1.5708 0     0"/>
+    <axis xyz="0  0 -1"/>
+    <limit lower="-1.79769e+308" upper="1.79769e+308" effort="-1.0" velocity="-1.0"/>
+  </joint>
+  <joint name="wagen__base__left_wheel" type="revolute">
+    <parent link="wagen__base"/>
+    <child link="wagen__rear_left"/>
+    <origin xyz="-0.7191   0.4243   0.09398" rpy="1.5708 0     0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.79769e+308" upper="1.79769e+308" effort="-1.0" velocity="-1.0"/>
+  </joint>
+  <joint name="wagen__right_suport__front_right" type="revolute">
+    <parent link="wagen__right_suport"/>
+    <child link="wagen__front_right"/>
+    <origin xyz="-0.00204 -0.04258 -0.09948" rpy="1.5708 0     0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.79769e+308" upper="1.79769e+308" effort="-1.0" velocity="-1.0"/>
+  </joint>
+  <joint name="wagen__left_suport__front_left" type="revolute">
+    <parent link="wagen__left_suport"/>
+    <child link="wagen__front_left"/>
+    <origin xyz="0.00182  0.04677 -0.09948" rpy="1.5708 0     0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.79769e+308" upper="1.79769e+308" effort="-1.0" velocity="-1.0"/>
+  </joint>
+  <joint name="wagen__camera_suport__camera" type="fixed">
+    <parent link="wagen__camera_suport"/>
+    <child link="wagen__camera"/>
+    <origin xyz="0.01253 0.00268 0.1012" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+  </joint>
+  <link name="wagen__base">
+    <inertial>
+      <mass value="0.245552"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.0105154" ixy="0" ixz="0" iyy="0.0371147" iyz="0" izz="0.0443486"/>
+    </inertial>
+    <collision name="wagen__collision">
+      <origin xyz="-0.28142 -0.00805  0.09398" rpy="0 0 0"/>
+      <geometry>
+        <box size="1.31666 0.658558 0.283164"/>
+      </geometry>
+    </collision>
+    <visual name="wagen__visual">
+      <origin xyz="-0.28142 -0.00805  0.09398" rpy="0 0 0"/>
+      <geometry>
+        <box size="1.31666 0.658558 0.283164"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wagen__rear_right">
+    <inertial>
+      <mass value="0.143808"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00744832" ixy="0" ixz="0" iyy="0.00744832" iyz="0" izz="0.01409"/>
+    </inertial>
+    <collision name="wagen__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.442668" length="0.183455"/>
+      </geometry>
+    </collision>
+    <visual name="wagen__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.442668" length="0.183455"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wagen__rear_left">
+    <inertial>
+      <mass value="0.143808"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00744832" ixy="0" ixz="0" iyy="0.00744832" iyz="0" izz="0.01409"/>
+    </inertial>
+    <collision name="wagen__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.442668" length="0.183455"/>
+      </geometry>
+    </collision>
+    <visual name="wagen__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.442668" length="0.183455"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wagen__right_suport">
+    <inertial>
+      <mass value="0.0007259"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="4.81e-06" ixy="0" ixz="0" iyy="4.86e-06" iyz="0" izz="3.2e-07"/>
+    </inertial>
+    <collision name="wagen__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.055069 0.047426 0.2781"/>
+      </geometry>
+    </collision>
+    <visual name="wagen__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.055069 0.047426 0.2781"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wagen__left_suport">
+    <inertial>
+      <mass value="0.0007259"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="4.81e-06" ixy="0" ixz="0" iyy="4.86e-06" iyz="0" izz="3.2e-07"/>
+    </inertial>
+    <collision name="wagen__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.055069 0.047426 0.2781"/>
+      </geometry>
+    </collision>
+    <visual name="wagen__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.055069 0.047426 0.2781"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wagen__front_right">
+    <inertial>
+      <mass value="0.00109615"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="2.06e-06" ixy="0" ixz="0" iyy="2.06e-06" iyz="0" izz="3.85e-06"/>
+    </inertial>
+    <collision name="wagen__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.08377" length="0.039002"/>
+      </geometry>
+    </collision>
+    <visual name="wagen__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0837702" length="0.0390021"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wagen__front_left">
+    <inertial>
+      <mass value="0.00109615"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="2.06e-06" ixy="0" ixz="0" iyy="2.06e-06" iyz="0" izz="3.85e-06"/>
+    </inertial>
+    <collision name="wagen__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.08377" length="0.039002"/>
+      </geometry>
+    </collision>
+    <visual name="wagen__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0837702" length="0.0390021"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wagen__camera_suport">
+    <inertial>
+      <mass value="0.00033607"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="4.65042e-07" ixy="0" ixz="0" iyy="3.25279e-07" iyz="0" izz="2.35025e-07"/>
+    </inertial>
+    <collision name="wagen__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.04124 0.0818 0.099569"/>
+      </geometry>
+    </collision>
+    <visual name="wagen__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.04124 0.0818 0.099569"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wagen__camera">
+    <inertial>
+      <mass value="0.00160925"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="5.6138e-06" ixy="0" ixz="0" iyy="2.42463e-06" iyz="0" izz="5.37942e-06"/>
+    </inertial>
+    <collision name="wagen__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.090367 0.178739 0.099569"/>
+      </geometry>
+    </collision>
+    <visual name="wagen__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.090367 0.178739 0.099569"/>
+      </geometry>
+    </visual>
+  </link>
+  <gazebo reference="wagen__camera">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>rrbot/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot>

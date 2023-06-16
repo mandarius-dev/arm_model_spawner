@@ -1,0 +1,29 @@
+<launch>
+	<!-- Launching Gazebo with empty world -->
+  	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+	   <arg name="paused" value="false"/>
+	   <arg name="gui" value="true"/>
+  	</include>
+
+	<!-- Loading robot description in param server -->
+	<arg name="model_gazebo" default="$(find model_spawner)/model/vehicle/urdf/vehicle.urdf"/>	
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model_gazebo)"/>
+	
+	<!-- Loading configuration for ackermann -->
+	<rosparam file="$(find model_spawner)/config/ackermann_steering.yaml" command="load"/>
+	
+	<!-- Spawning the model in gazebo -->
+	<node name="model_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" respawn="false"
+		args="-param robot_description -urdf -model vehicle -x 0 -y 0 -z 0.6"/>
+		
+	<!-- Spawning the controller -->
+  	<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    		output="screen" ns="/" args="ackermann_steering_controller"/>
+		
+	<!-- Publishing the joint state on /tf -->
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+		
+	<!-- Rviz -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find model_spawner)/rviz/ackermann_steering_rviz_config.rviz" required="true" output="screen"/>
+</launch>

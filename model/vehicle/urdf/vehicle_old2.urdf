@@ -1,0 +1,190 @@
+<?xml version="1.0" ?>
+<robot name="vehicle">
+  <joint name="vehicle__center_axel__front_axel" type="revolute">
+    <parent link="vehicle__center_axel"/>
+    <child link="vehicle__front_axel"/>
+    <origin xyz="0      0.56699 0.5" rpy="0     0     1.5708"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1e+16" upper="1e+16" effort="-1.0" velocity="-1.0"/>
+  </joint>
+  
+  <joint name="vehicle__center_axel__rear_axel" type="revolute">
+    <parent link="vehicle__center_axel"/>
+    <child link="vehicle__rear_axel"/>
+    <origin xyz="-1.56     0.56699  0.5" rpy="0     0     1.5708"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-1.79769e+308" upper="1.79769e+308" effort="-1.0" velocity="-1.0"/>
+  </joint>
+  
+  <joint name="vehicle__front_axel__front_left_wheel" type="revolute">
+    <parent link="vehicle__front_axel"/>
+    <child link="vehicle__front_left_wheel"/>
+    <origin xyz="-0.56699  0       0" rpy="1.5708  0     -1.5708"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.79769e+308" upper="1.79769e+308" effort="-1.0" velocity="-1.0"/>
+  </joint>
+  
+  <joint name="vehicle__front_axel__front_right_wheel" type="revolute">
+    <parent link="vehicle__front_axel"/>
+    <child link="vehicle__front_right_wheel"/>
+    <origin xyz="0.56699 0      0" rpy="1.5708  0     -1.5708"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.79769e+308" upper="1.79769e+308" effort="-1.0" velocity="-1.0"/>
+  </joint>
+  
+  <joint name="vehicle__rear_axel__rear_left_wheel" type="fixed">
+    <parent link="vehicle__rear_axel"/>
+    <child link="vehicle__rear_left_wheel"/>
+    <origin xyz="0.56699 0      0" rpy="1.5708  0     -1.5708"/>
+    <axis xyz="0 0 0"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+  </joint>
+  
+  <joint name="vehicle__rear_axel__rear_right_wheel" type="fixed">
+    <parent link="vehicle__rear_axel"/>
+    <child link="vehicle__rear_right_wheel"/>
+    <origin xyz="-0.56699  0       0" rpy="1.5708  0     -1.5708"/>
+    <axis xyz="0 0 0"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+  </joint>
+  
+  <link name="vehicle__front_left_wheel">
+    <inertial>
+      <mass value="2.81288"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.0561581" ixy="0" ixz="0" iyy="0.0561581" iyz="0" izz="0.0987674"/>
+    </inertial>
+    <collision name="vehicle__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.265" length="0.17"/>
+      </geometry>
+    </collision>
+    <visual name="vehicle__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.265" length="0.17"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <link name="vehicle__front_right_wheel">
+    <inertial>
+      <mass value="2.81288"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.0561581" ixy="0" ixz="0" iyy="0.0561581" iyz="0" izz="0.0987674"/>
+    </inertial>
+    <collision name="vehicle__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.265" length="0.17"/>
+      </geometry>
+    </collision>
+    <visual name="vehicle__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.265" length="0.17"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <link name="vehicle__rear_right_wheel">
+    <inertial>
+      <mass value="1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.145833" ixy="0" ixz="0" iyy="0.145833" iyz="0" izz="0.125"/>
+    </inertial>
+    <collision name="vehicle__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.3305" length="0.194"/>
+      </geometry>
+    </collision>
+    <visual name="vehicle__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.3305" length="0.194"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <link name="vehicle__rear_left_wheel">
+    <inertial>
+      <mass value="1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.145833" ixy="0" ixz="0" iyy="0.145833" iyz="0" izz="0.125"/>
+    </inertial>
+    <collision name="vehicle__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.3305" length="0.194"/>
+      </geometry>
+    </collision>
+    <visual name="vehicle__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.3305" length="0.194"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <link name="vehicle__center_axel">
+    <inertial>
+      <mass value="0.527174"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00043053" ixy="0" ixz="0" iyy="0.0906154" iyz="0" izz="0.0906154"/>
+    </inertial>
+    <collision name="vehicle__collision">
+      <origin xyz="-0.79734  0.56699  0.5" rpy="0 0 0"/>
+      <geometry>
+        <box size="1.43449 0.07 0.07"/>
+      </geometry>
+    </collision>
+    <visual name="vehicle__visual">
+      <origin xyz="-0.79734  0.56699  0.5" rpy="0 0 0"/>
+      <geometry>
+        <box size="1.43449 0.07 0.07"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <link name="vehicle__rear_axel">
+    <inertial>
+      <mass value="0.341352"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00027877" ixy="0" ixz="0" iyy="0.0246815" iyz="0" izz="0.0246815"/>
+    </inertial>
+    <collision name="vehicle__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.928849 0.07 0.07"/>
+      </geometry>
+    </collision>
+    <visual name="vehicle__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.928849 0.07 0.07"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <link name="vehicle__font_axel">
+    <inertial>
+      <mass value="0.341352"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00027877" ixy="0" ixz="0" iyy="0.0246815" iyz="0" izz="0.0246815"/>
+    </inertial>
+    <collision name="vehicle__collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.928849 0.07 0.07"/>
+      </geometry>
+    </collision>
+    <visual name="vehicle__visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.928849 0.07 0.07"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>

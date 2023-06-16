@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="arm3_scale">
+
+    <link name="world"/>
+    
+    <link name="base_joint">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="10589.11148" ixy="3.17383" ixz="-0.28477" iyy="10573.97458" iyz="1.77188" izz="242.34695"/>
+      </inertial>
+      <visual name="base">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/base_mesh.dae" scale="12.5 12.5 4.5"/>
+        </geometry>
+        <material name="base_material"/>
+      </visual>
+      <collision name="base.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/base_mesh.001.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_1">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="11897.9001" ixy="0.1" ixz="-0.15925" iyy="11892.19952" iyz="-83.18975" izz="67.30753"/>
+      </inertial>
+      <visual name="link_1">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/link_1_mesh.dae" scale="10.0 10.0 3.5"/>
+        </geometry>
+        <material name="link_1_material"/>
+      </visual>
+      <collision name="link_1.000">
+        <origin xyz="-0.02008 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/link_1_mesh.001.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_2">
+      <inertial>
+        <origin xyz="0 12.49996 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="1412.49023" ixy="0.57088" ixz="-0.7808" iyy="1419.77344" iyz="-2.36581" izz="133.62944"/>
+      </inertial>
+      <visual name="link_2">
+        <origin xyz="0 12.49996 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/link_2_mesh.dae" scale="4.0 4.0 4.0"/>
+        </geometry>
+        <material name="link_2_material"/>
+      </visual>
+      <collision name="link_2.000">
+        <origin xyz="0 12.4999 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/link_2_mesh.001.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_3">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="773.92639" ixy="-0.14592" ixz="0.78848" iyy="781.10718" iyz="-0.11002" izz="130.68288"/>
+      </inertial>
+      <visual name="link_3">
+        <origin xyz="0 2e-05 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/link_3_mesh.dae" scale="4.0 4.0 4.0"/>
+        </geometry>
+        <material name="link_3_material"/>
+      </visual>
+      <collision name="link_3.000">
+        <origin xyz="0 2e-05 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/link_3_mesh.001.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_4">
+      <inertial>
+        <origin xyz="0 0 -2e-05" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="137.33632" ixy="-0.63232" ixz="-3.725" iyy="163.16412" iyz="5.77508" izz="715.10295"/>
+      </inertial>
+      <visual name="link_4">
+        <origin xyz="0 0 -5e-05" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/link_4_mesh.dae" scale="4.0 4.0 6.25"/>
+        </geometry>
+        <material name="link_4_material"/>
+      </visual>
+      <collision name="link_4.000">
+        <origin xyz="0 0 -5e-05" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/link_4_mesh.001.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_5">
+      <inertial>
+        <origin xyz="0 3.64154 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="284.06784" ixy="0.28928" ixz="0.6144" iyy="264.62717" iyz="0.04341" izz="113.16734"/>
+      </inertial>
+      <visual name="link_5">
+        <origin xyz="0 3.64149 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/link_5_mesh.dae" scale="4.0 4.0 4.0"/>
+        </geometry>
+        <material name="link_5_material"/>
+      </visual>
+      <collision name="link_5.000">
+        <origin xyz="0 3.64149 0.00078" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/link_5_mesh.001.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_6">
+      <inertial>
+        <origin xyz="0 0 0.74928" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="2186.28345" ixy="0" ixz="-0.05632" iyy="2121.90404" iyz="-0.00015" izz="0.48617"/>
+      </inertial>
+      <visual name="link_6">
+        <origin xyz="0 0 0.74928" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/link_6_mesh.dae" scale="4.0 4.0 1.0"/>
+        </geometry>
+        <material name="link_6_material"/>
+      </visual>
+      <collision name="link_6.000">
+        <origin xyz="0 0 0.7493" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/arm3/meshes/dae/link_6_mesh.001.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="world_base" type="fixed">
+      <parent link="world"/>
+      <child link="base_joint"/>
+    </joint>
+
+    <joint name="link_1_joint" type="continuous">
+      <origin xyz="0.02008 0.61999 10.66318" rpy="0 0 0"/>
+      <parent link="base_joint"/>
+      <child link="link_1"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="1.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="link_2_joint" type="revolute">
+      <origin xyz="-0.02008 -6.26349 5.2697" rpy="1.5708 0 0"/>
+      <parent link="link_1"/>
+      <child link="link_2"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="1.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="link_3_joint" type="revolute">
+      <origin xyz="0 24.7971 -11.16805" rpy="0 -3.14159 0"/>
+      <parent link="link_2"/>
+      <child link="link_3"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-2.57" upper="2.57" effort="1.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="link_4_joint" type="continuous">
+      <origin xyz="0 21.37913 0.02204" rpy="1.5708 0 -3.14159"/>
+      <parent link="link_3"/>
+      <child link="link_4"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="1.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="link_5_joint" type="revolute">
+      <origin xyz="0 0.00078 3.72825" rpy="1.5708 0 0"/>
+      <parent link="link_4"/>
+      <child link="link_5"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-1.57" upper="1.57" effort="1.0" velocity="1.0"/>
+    </joint>
+
+    <joint name="link_6_joint" type="continuous">
+      <origin xyz="0 10.39911 0" rpy="-1.5708 0 0"/>
+      <parent link="link_5"/>
+      <child link="link_6"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="1.0" velocity="1.0"/>
+    </joint>
+
+    <material name="base_material">
+      <color rgba="0.00293 0.17898 0.64 1.0"/>
+    </material>
+
+    <material name="link_1_material">
+      <color rgba="0.27804 0.56837 0.64 1.0"/>
+    </material>
+
+    <material name="link_2_material">
+      <color rgba="0.03587 0.64 0.15975 1.0"/>
+    </material>
+
+    <material name="link_3_material">
+      <color rgba="0.64 0.12974 0.1869 1.0"/>
+    </material>
+
+    <material name="link_4_material">
+      <color rgba="0.63358 0.64 0.05655 1.0"/>
+    </material>
+
+    <material name="link_5_material">
+      <color rgba="0.64 0.13903 0.59154 1.0"/>
+    </material>
+
+    <material name="link_6_material">
+      <color rgba="0.27033 0.06955 0.64 1.0"/>
+    </material>
+
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/arm_joint_controll</robotNamespace>
+      </plugin>
+      
+     <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+       <jointName>link_1_joint,link_2_joint,link_3_joint,link_4_joint,link_5_joint,link_6_joint</jointName>
+     </plugin>
+    </gazebo>
+    
+    <transmission name="tran_1">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="link_1_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+      <actuator name="motor_1">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran_2">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="link_2_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+      <actuator name="motor_2">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran_3">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="link_3_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+      <actuator name="motor_3">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>    
+
+    <transmission name="tran_4">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="link_4_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+      <actuator name="motor_4">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+    <transmission name="tran_5">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="link_5_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+      <actuator name="motor_5">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>   
+
+    <transmission name="tran_6">
+      <type>transmission_interface/SimpleTransmission</type>
+	  <joint name="link_6_joint">
+	    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+	  </joint>
+      <actuator name="motor_6">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>             
+  </robot>

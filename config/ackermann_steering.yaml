@@ -1,0 +1,19 @@
+# Ackermann configuration
+ackermann_steering_controller:
+  type: "ackermann_steering_controller/AckermannSteeringController"
+  front_steer: "vehicle__center_axel__front_axel"
+  rear_wheel: "vehicle__center_axel__rear_axel"
+  pose_covariance_diagonal: [1.0, 1.0, 1.0, 1000000.0, 1000000.0, 1000000.0]
+  twist_covariance_diagonal: [1.0, 1.0, 1.0, 1000000.0, 1000000.0, 1000000.0]
+  base_frame_id: vehicle__center_axel
+
+# Parameters for the PID of the two joints, front and rear
+# The namespace should NOT be changed (/gazebo_ros_control/pid_gains needs to be like this)
+gazebo_ros_control:
+  pid_gains: 
+    vehicle__center_axel__front_axel:  {p: 100.0, d: 0.0, i: 0.00}
+    vehicle__center_axel__rear_axel:  {p: 100.0, d: 0.0, i: 0.00}
+    
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50  

@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="bila">
+
+    <link name="bogy_joint">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.01137" ixy="0" ixz="0" iyy="0.01137" iyz="0" izz="0.00219"/>
+      </inertial>
+      <visual name="boby">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.77088 0.77088 2.36333"/>
+        </geometry>
+        <material name="body_material"/>
+      </visual>
+      <collision name="boby">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.77088 0.77088 2.36333"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="pipe_1_joint">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.0061" ixy="0" ixz="0" iyy="0.0061" iyz="0" izz="0.00013"/>
+      </inertial>
+      <visual name="pipe_1">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/bila/meshes/dae/Cube.004.dae" scale="0.44772 0.44772 0.44772"/>
+        </geometry>
+        <material name="pipe_material"/>
+      </visual>
+      <collision name="pipe_1">
+        <origin xyz="0 -0.00433 -0.00514" rpy="2.35619 0 0"/>
+        <geometry>
+          <cylinder radius="0.08147" length="1.57426"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="pipe_2_joint">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.00925" ixy="0" ixz="0" iyy="0.00925" iyz="0" izz="0.0064"/>
+      </inertial>
+      <visual name="pipe_2">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/bila/meshes/dae/Cube.002.dae" scale="0.44772 0.44772 0.44772"/>
+        </geometry>
+        <material name="pipe_material"/>
+      </visual>
+      <collision name="pipe_2">
+        <origin xyz="0.16629 0.09665 -0.1917" rpy="0 -0.7854 0.51842"/>
+        <geometry>
+          <cylinder radius="0.08317" length="1.55402"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="pipe_3_joint">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.00925" ixy="0" ixz="0" iyy="0.00925" iyz="0" izz="0.0064"/>
+      </inertial>
+      <visual name="pipe_3">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/bila/meshes/dae/Cube.003.dae" scale="0.44772 0.44772 0.44772"/>
+        </geometry>
+        <material name="pipe_material"/>
+      </visual>
+      <collision name="pipe_3">
+        <origin xyz="-0.17186 0.09988 -0.19838" rpy="-0.04261 0.77963 -0.58647"/>
+        <geometry>
+          <cylinder radius="0.08394" length="1.55229"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="pipe_merge_joint">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.00039" ixy="0" ixz="0" iyy="0.00039" iyz="0" izz="0.00034"/>
+      </inertial>
+      <visual name="pipe_merge">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.29623" length="0.59246"/>
+        </geometry>
+        <material name="pipe_merge_material"/>
+      </visual>
+      <collision name="pipe_merge">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder radius="0.29623" length="0.59246"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="wheel_1_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.00396" ixy="0" ixz="0" iyy="0.00581" iyz="0.00185" izz="0.00581"/>
+      </inertial>
+      <visual name="wheel_1">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/bila/meshes/dae/wheel_1_mesh.dae" scale="0.31362 0.31362 0.31362"/>
+        </geometry>
+        <material name="wheel_material"/>
+      </visual>
+      <collision name="wheel_1">
+        <origin xyz="0 0 0" rpy="3.14159 0 0"/>
+        <geometry>
+          <cylinder radius="0.39203" length="0.16701"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="wheel_2_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.00535" ixy="0.0008" ixz="-0.0016" iyy="0.00442" iyz="-0.00092" izz="0.00581"/>
+      </inertial>
+      <visual name="wheel_2">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/bila/meshes/dae/wheel_2_mesh.dae" scale="0.31362 0.31362 0.31362"/>
+        </geometry>
+        <material name="wheel_material"/>
+      </visual>
+      <collision name="wheel_2">
+        <origin xyz="0 0 0" rpy="-0.00366 0 -1.57446"/>
+        <geometry>
+          <cylinder radius="0.39203" length="0.15845"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="wheel_3_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.00535" ixy="-0.0008" ixz="0.0016" iyy="0.00442" iyz="-0.00092" izz="0.00581"/>
+      </inertial>
+      <visual name="wheel_3">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://model_spawner/model/bila/meshes/dae/wheel_3_mesh.dae" scale="0.31362 0.31362 0.31362"/>
+        </geometry>
+        <material name="wheel_material"/>
+      </visual>
+      <collision name="wheel_3">
+        <origin xyz="0 0 0" rpy="0.00184 -0.00477 1.5261"/>
+        <geometry>
+          <cylinder radius="0.39203" length="0.16059"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="pipe_1_joint" type="fixed">
+      <origin xyz="0 -0.68877 -0.5478" rpy="0 0 0"/>
+      <parent link="pipe_merge_joint"/>
+      <child link="pipe_1_joint"/>
+    </joint>
+
+    <joint name="pipe_2_joint" type="fixed">
+      <origin xyz="0.59649 0.34439 -0.5478" rpy="0 0 0"/>
+      <parent link="pipe_merge_joint"/>
+      <child link="pipe_2_joint"/>
+    </joint>
+
+    <joint name="pipe_3_joint" type="fixed">
+      <origin xyz="-0.59649 0.34439 -0.5478" rpy="0 0 0"/>
+      <parent link="pipe_merge_joint"/>
+      <child link="pipe_3_joint"/>
+    </joint>
+
+    <joint name="pipe_merge_joint" type="fixed">
+      <origin xyz="0 0 -1.44067" rpy="0 0 0"/>
+      <parent link="bogy_joint"/>
+      <child link="pipe_merge_joint"/>
+    </joint>
+
+    <joint name="wheel_1_joint" type="continuous">
+      <origin xyz="0 -0.82883 -0.82883" rpy="-0.7854 0 0"/>
+      <parent link="pipe_1_joint"/>
+      <child link="wheel_1_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="1.0" velocity="2.0"/>
+    </joint>
+
+    <joint name="wheel_2_joint" type="continuous">
+      <origin xyz="0.71779 0.41442 -0.82883" rpy="-0.7854 0 2.0944"/>
+      <parent link="pipe_2_joint"/>
+      <child link="wheel_2_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="1.0" velocity="2.0"/>
+    </joint>
+
+    <joint name="wheel_3_joint" type="continuous">
+      <origin xyz="-0.71779 0.41442 -0.82883" rpy="-0.7854 0 -2.0944"/>
+      <parent link="pipe_3_joint"/>
+      <child link="wheel_3_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="1.0" velocity="2.0"/>
+    </joint>
+
+    <material name="body_material">
+      <color rgba="0 0 1 1.0"/>
+    </material>
+
+    <material name="pipe_material">
+      <color rgba="0.02743 0.64 0.12293 1.0"/>
+    </material>
+
+    <material name="pipe_merge_material">
+      <color rgba="0.00609 0.64 0.56867 1.0"/>
+    </material>
+
+    <material name="wheel_material">
+      <color rgba="0.64 0.10136 0.39169 1.0"/>
+    </material>
+
+  </robot>

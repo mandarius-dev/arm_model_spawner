@@ -1,0 +1,14 @@
+<launch>
+  	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+	    <arg name="paused" value="true"/>
+  	</include>
+
+	<arg name="model_gazebo" default="$(find model_spawner)/model/bila/urdf/bila.urdf"/>	
+
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model_gazebo)"/>
+	
+	<node name="model_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" respawn="false"
+		args="-param robot_description -urdf -model bila -x 0 -y 0 -z 5"/>
+		
+	<!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" output="screen"/>-->
+</launch>
