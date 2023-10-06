@@ -3,7 +3,7 @@
 This is a repository that is a part of five that are meant to help in designing a six-degree-of-freedom manipulator.
 Repositories:
  1. Source Code Package [[Link][control]]
- 2. 3D Model Spawner Package 
+ 2. **3D Model Spawner Package** 
  3. MatLab Scripts [[Link][script]]
  4. Model of the arm [[Link][model]]
  5. User Interface in LabView [[Link][UI]]
